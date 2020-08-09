@@ -1,5 +1,5 @@
 {
-    "homepage": "https://master-bogdan.github.io/react-friends-app/",
+  "homepage": "https://master-bogdan.github.io/react-friends-app/",
   "name": "friends-app",
   "version": "0.1.0",
   "private": true,
@@ -10,6 +10,7 @@
     "bootstrap": "^4.5.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.3.0",
+    "react-bootstrap-icons": "^1.0.3-alpha5",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
   },

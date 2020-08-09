@@ -6,9 +6,14 @@ export default class UserItem extends Component {
     render() {
         return (
             <Card>
-                <Card.Img variant="top" src={this.props.image} />
+                {this.props.gender === "MALE" 
+                    ? <Card.Title className="card-title-male"
+                    >{this.props.name}</Card.Title>
+                    : <Card.Title
+                    >{this.props.name}</Card.Title>
+                }
                 <Card.Body>
-                    <Card.Title>{this.props.name}</Card.Title>
+                    <Card.Img variant="top" src={this.props.image} />
                     <Card.Text>{this.props.gender}</Card.Text>
                     <Card.Text>{this.props.age}</Card.Text>
                     <Card.Text>{this.props.city}</Card.Text>

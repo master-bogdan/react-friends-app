@@ -1,5 +1,24 @@
 .row {
     justify-content: center;
-    align-items: center;
     align-content: space-between;
+}
+
+.friends-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sort {
+    text-align: center;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+svg {
+    width: 1.5em;
+    height: 1.5em;
 }
