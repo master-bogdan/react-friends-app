@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './UserList.css';
-import { Container, Row, Col, ButtonGroup, Button } from 'react-bootstrap';
-import { SortUpAlt, SortDownAlt } from 'react-bootstrap-icons';
+import { Container, Row, Col } from 'react-bootstrap';
 
 import UserItem from '../UserItem/UserItem';
 import Error from '../Error/Error';
+import FilterService from '../FilterService/FilterService';
 
 export default class UserList extends Component {
     constructor(props) {
@@ -25,12 +25,10 @@ export default class UserList extends Component {
         .catch(err =>  this.setState({hasError: true, error: `${err}` }))
     }
 
-    sortByYoungestAge = () => {
-        this.setState({users: this.state.users.sort((a, b) =>  a.dob.age - b.dob.age)});
-    }
-
-    sortByOldestAge = () => {
-        this.setState({users: this.state.users.sort((a, b) =>  b.dob.age - a.dob.age)});
+    handlerSort = (value) => {
+        this.setState({
+            users: value
+        })
     }
 
     render() {
@@ -40,30 +38,31 @@ export default class UserList extends Component {
         return(
             <Container fluid>
                 <Row>
-                    <Col md={3}>
-                        <div className="sort">
-                            <h4>Filter</h4>
-                            <div>
-                                <p>By Age</p>
-                                <ButtonGroup aria-label="Sort By Age">
-                                    <Button variant="outline-warning" onClick={() => this.sortByYoungestAge()}><SortDownAlt /></Button>
-                                    <Button variant="outline-warning" onClick={() => this.sortByOldestAge()}><SortUpAlt /></Button>
-                                </ButtonGroup>
-                            </div>
-                        </div>
+                    <Col 
+                        className="filter"
+                        xs={3} 
+                        md={2}
+                        >
+                            <FilterService 
+                                users={this.state.users}
+                                handlerSort={this.handlerSort}
+                            />
                     </Col>
-                    <Col className="friends-list" md={9}>
-                        {this.state.users.map((item, index) => { 
-                            return <UserItem
-                                    key={index}
-                                    name={`${item.name.first} ${item.name.last}`}
-                                    image={item.picture.large}
-                                    gender={`${item.gender.toUpperCase()}`} 
-                                    age={`Age: ${item.dob.age} years`}
-                                    city={`City: ${item.location.city}`}
-                                    country={`Country: ${item.location.country}`}
-                                    />
-                        })}
+                    <Col 
+                        className="friends-list" 
+                        xs={9} 
+                        md={10}>
+                            {this.state.users.map((item, index) => { 
+                                return <UserItem
+                                        key={index}
+                                        name={`${item.name.first} ${item.name.last}`}
+                                        image={item.picture.large}
+                                        gender={`${item.gender.toUpperCase()}`} 
+                                        age={`Age: ${item.dob.age} years`}
+                                        city={`City: ${item.location.city}`}
+                                        country={`Country: ${item.location.country}`}
+                                        />
+                            })}
                     </Col>
                 </Row>
             </Container>
