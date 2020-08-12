@@ -4,7 +4,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 import UserItem from '../UserItem/UserItem';
 import Error from '../Error/Error';
-import FilterService from '../FilterService/FilterService';
+import AgeFilterService from '../FilterService/AgeFilterService';
+import NameFilterService from '../FilterService/NameFilterService';
 
 export default class UserList extends Component {
     constructor(props) {
@@ -30,6 +31,7 @@ export default class UserList extends Component {
             users: value
         })
     }
+    
 
     render() {
         if(this.state.hasError) {
@@ -43,10 +45,17 @@ export default class UserList extends Component {
                         xs={3} 
                         md={2}
                         >
-                            <FilterService 
+                        <div className="sort">
+                            <h4>FILTER</h4>
+                            <AgeFilterService 
                                 users={this.state.users}
                                 handlerSort={this.handlerSort}
                             />
+                            <NameFilterService 
+                                users={this.state.users}
+                                handlerSort={this.handlerSort}
+                            />
+                        </div>
                     </Col>
                     <Col 
                         className="friends-list" 

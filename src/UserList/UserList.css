@@ -13,3 +13,12 @@
     display: flex;
     justify-content: center;
 }
+
+.sort {
+    text-align: center;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}

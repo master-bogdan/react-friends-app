@@ -1,10 +1,5 @@
-.sort {
-    text-align: center;
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: column;
+.age-filter, .name-filter {
+    padding: 10px 0 10px 0;
 }
 
 svg {

@@ -23,22 +23,22 @@ class App extends Component {
     }
 
     render() {
-        if (!this.state.login) {
-            return (
-                <Login 
-                    handleLogin={this.handleLogin} 
-                    name={this.state.name}
-                    login={this.state.login}
-                />
-            )
-        } else {
+        // if (!this.state.login) {
+        //     return (
+        //         <Login 
+        //             handleLogin={this.handleLogin} 
+        //             name={this.state.name}
+        //             login={this.state.login}
+        //         />
+        //     )
+        // } else {
             return (
                 <div className="App">
                     <Header name={this.state.name}/>
                     <UserList/>
                 </div>
             );
-        }
+        // }
     }
 }
 
