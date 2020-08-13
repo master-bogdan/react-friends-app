@@ -1,3 +1,5 @@
+# :dolls: React friend app [DEMO](https://master-bogdan.github.io/react-friends-app/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
