@@ -6,12 +6,10 @@ import { SortUpAlt, SortDownAlt } from 'react-bootstrap-icons';
 class NameFilterService extends Component {
 
     sortByLastNameUp = (props) => {
-        console.log(props);
         return props.sort((a, b) =>  a.name.last > b.name.last ? 1 : - 1);
     }
 
     sortByLastNameDown = (props) => {
-        console.log(props[0].name.last);
         return props.sort((a, b) =>  b.name.last < a.name.last ? -1 : 1);
     }
 

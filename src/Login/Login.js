@@ -37,6 +37,7 @@ class Login extends Component {
                             onChange={this.setName}
                             type="text" placeholder="name"/>
                         <Button
+                            className="login-btn"
                             type="submit" 
                             variant="primary">
                             Login

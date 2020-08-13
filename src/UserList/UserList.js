@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './UserList.css';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 
 import UserItem from '../UserItem/UserItem';
 import Error from '../Error/Error';
 import AgeFilterService from '../FilterService/AgeFilterService';
 import NameFilterService from '../FilterService/NameFilterService';
+import NameSearch from '../FilterService/NameSearch';
 
 export default class UserList extends Component {
     constructor(props) {
@@ -31,7 +32,24 @@ export default class UserList extends Component {
             users: value
         })
     }
-    
+
+    handlerNameSearch = (value) => {
+        const users = this.state.users;
+
+        if(!value || value.length <= 3) {
+            this.getResource();
+        } 
+        else 
+        {
+            for (let i = 0; i < users.length; i++) {
+                if (value.length > 1 && users[i].name.first.toLowerCase().includes(value)) {
+                        this.setState({
+                            users: [users[i]]
+                        })
+                    } 
+                }
+        }
+    }
 
     render() {
         if(this.state.hasError) {
@@ -55,6 +73,14 @@ export default class UserList extends Component {
                                 users={this.state.users}
                                 handlerSort={this.handlerSort}
                             />
+                            <NameSearch 
+                                handlerNameSearch={this.handlerNameSearch}
+                            />
+                            <Button
+                                variant="outline-warning"
+                                onClick={this.getResource}>
+                                reset
+                            </Button>
                         </div>
                     </Col>
                     <Col 

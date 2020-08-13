@@ -1,5 +1,10 @@
-.age-filter, .name-filter {
+.age-filter, .name-filter, .name-search {
     padding: 10px 0 10px 0;
+}
+
+.name-search input {
+    width: 130px;
+    text-align: center;
 }
 
 svg {
