@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "07ddb418fe95bb89908fb2b63671295c",
+    "revision": "39f2da86d31614691cdcd33da3c64e4e",
     "url": "/react-friends-app/index.html"
   },
   {
-    "revision": "94696320413ae19e71c5",
+    "revision": "fc758f870e57a14d618f",
     "url": "/react-friends-app/static/css/2.ed439b8d.chunk.css"
   },
   {
-    "revision": "22239e8dc779f05f86ce",
+    "revision": "1d1a74305a94e0b75427",
     "url": "/react-friends-app/static/css/main.fa91f468.chunk.css"
   },
   {
-    "revision": "94696320413ae19e71c5",
-    "url": "/react-friends-app/static/js/2.b299c2a0.chunk.js"
+    "revision": "fc758f870e57a14d618f",
+    "url": "/react-friends-app/static/js/2.60189dd4.chunk.js"
   },
   {
     "revision": "5ac48c47bb3912b14c2d8de4f56d5ae8",
-    "url": "/react-friends-app/static/js/2.b299c2a0.chunk.js.LICENSE.txt"
+    "url": "/react-friends-app/static/js/2.60189dd4.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "22239e8dc779f05f86ce",
-    "url": "/react-friends-app/static/js/main.3ffb1313.chunk.js"
+    "revision": "1d1a74305a94e0b75427",
+    "url": "/react-friends-app/static/js/main.2d1c8a5f.chunk.js"
   },
   {
     "revision": "1caf403ebb8d5009c6b8",
