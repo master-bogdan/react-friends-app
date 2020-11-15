@@ -1,44 +1,31 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
-import Header from '../Header/Header';
-import Login from '../Login/Login';
-import UserList from '../UserList/UserList';
+import Header from './components/Header';
+import Login from './components/Login';
+import UserList from './components/UserList';
 
 
-class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: '',
-            login: false
-        };
+const App = () => {
+    const [name, setName] = useState();
+    const [isLogin, setIsLogin] = useState(false);
+
+    if (!isLogin) {
+        return (
+            <Login 
+                name={name}
+                setName={setName}
+                login={isLogin}
+                setIsLogin={setIsLogin}
+            />
+        )
     }
-
-    handleLogin = (nameValue, loginValue) => {
-        this.setState({ 
-            name: nameValue,  
-            login: loginValue
-         })
-    }
-
-    render() {
-        if (!this.state.login) {
-            return (
-                <Login 
-                    handleLogin={this.handleLogin} 
-                    name={this.state.name}
-                    login={this.state.login}
-                />
-            )
-        } else {
-            return (
-                <div className="App">
-                    <Header name={this.state.name}/>
-                    <UserList/>
-                </div>
-            );
-        }
-    }
+    
+    return (
+        <div className="App">
+            <Header name={name}/>
+            <UserList/>
+        </div>
+    );
 }
 
 export default App;

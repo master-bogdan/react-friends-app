@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './UserList.css';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
-import UserItem from '../UserItem/UserItem';
-import Error from '../Error/Error';
+import UserItem from '../UserItem';
+import Error from '../Error';
 import AgeFilterService from '../FilterService/AgeFilterService';
 import NameFilterService from '../FilterService/NameFilterService';
 import NameSearch from '../FilterService/NameSearch';
@@ -36,16 +36,15 @@ export default class UserList extends Component {
     handlerNameSearch = (value) => {
         const users = this.state.users;
 
-        if(!value || value.length <= 3) {
+        if (!value || value.length <= 3) {
             this.getResource();
         } 
-        else 
-        {
+        else {
             for (let i = 0; i < users.length; i++) {
                 if (value.length > 1 && users[i].name.first.toLowerCase().includes(value)) {
                         this.setState({
                             users: [users[i]]
-                        })
+                        });
                     } 
                 }
         }
@@ -62,7 +61,7 @@ export default class UserList extends Component {
                         className="filter"
                         xs={3} 
                         md={2}
-                        >
+                    >
                         <div className="sort">
                             <h4>FILTER</h4>
                             <AgeFilterService 
@@ -86,9 +85,10 @@ export default class UserList extends Component {
                     <Col 
                         className="friends-list" 
                         xs={9} 
-                        md={10}>
-                            {this.state.users.map((item, index) => { 
-                                return <UserItem
+                        md={10}
+                    >
+                        {this.state.users.map((item, index) => { 
+                            return <UserItem
                                         key={index}
                                         name={`${item.name.first} ${item.name.last}`}
                                         image={item.picture.large}
@@ -96,8 +96,8 @@ export default class UserList extends Component {
                                         age={`Age: ${item.dob.age} years`}
                                         city={`City: ${item.location.city}`}
                                         country={`Country: ${item.location.country}`}
-                                        />
-                            })}
+                                    />
+                        })}
                     </Col>
                 </Row>
             </Container>

@@ -13,7 +13,8 @@ class NameSearch extends Component {
                 <p>Search by name</p>
                 <input 
                     type="text" 
-                    onChange={this.onNameSearch} />
+                    onChange={this.onNameSearch} 
+                />
             </div>
         )
     }
